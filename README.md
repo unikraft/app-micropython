@@ -1,4 +1,4 @@
-# Micropytho on Unikraft
+# Micropython on Unikraft
 
 To build and run this application please use the `kraft` script:
 
