@@ -1,7 +1,7 @@
 specification: '0.4'
 
 unikraft:
-  version: '0.4'
+  version: '0.5'
   kconfig:
     - CONFIG_LIBUKMMAP=y
     # optimizations are currently not working well
@@ -15,15 +15,15 @@ platforms:
   kvm: true
   
 libraries:
-  newlib: '0.4'
+  newlib: '0.5'
   lwip:
-    version: '0.4'
+    version: '0.5'
     kconfig:
       - CONFIG_LWIP=y
       - CONFIG_LWIP_IGMP=y
       - CONFIG_LWIP_NOTHREADS=y
   micropython:
-    version: '0.4'
+    version: '0.5'
     kconfig:
       - CONFIG_LIBMICROPYTHON=y
       - CONFIG_LIBMICROPYTHON_MAIN_FUNCTION=y
