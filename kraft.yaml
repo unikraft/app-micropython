@@ -1,19 +1,15 @@
-specification: '0.4'
-
+specification: '0.5'
+name: micropython
 unikraft:
   version: '0.5'
   kconfig:
     - CONFIG_LIBUKMMAP=y
-    # optimizations are currently not working well
     - CONFIG_OPTIMIZE_NONE=y
-
-architectures:
-  x86_64: true
-
-platforms:
-  linuxu: true
-  kvm: true
-  
+targets:
+  - architecture: x86_64
+    platform: linuxu
+  - architecture: x86_64
+    platform: kvm
 libraries:
   newlib: '0.5'
   lwip:
@@ -27,13 +23,7 @@ libraries:
     kconfig:
       - CONFIG_LIBMICROPYTHON=y
       - CONFIG_LIBMICROPYTHON_MAIN_FUNCTION=y
-
-run:
-  networks:
-    net0:
-      pre_up: kraft-net --with-dnsmasq up
-      post_down: kraft-net --with-dnsmasq down
-  volumes:
-    vol0:
-      driver: initrd
-      source: ./helloworld.py
+volumes:
+  vol0:
+    driver: initrd
+    source: ./helloworld.py
