@@ -1,7 +1,8 @@
+---
 specification: '0.5'
 name: micropython
 unikraft:
-  version: '0.5'
+  version: stable
   kconfig:
     - CONFIG_LIBUKMMAP=y
     - CONFIG_OPTIMIZE_NONE=y
@@ -10,16 +11,19 @@ targets:
     platform: linuxu
   - architecture: x86_64
     platform: kvm
+  - architecture: arm64
+    platform: kvm
 libraries:
-  newlib: '0.5'
+  musl:
+    version: stable
   lwip:
-    version: '0.5'
+    version: stable
     kconfig:
       - CONFIG_LWIP=y
       - CONFIG_LWIP_IGMP=y
       - CONFIG_LWIP_NOTHREADS=y
   micropython:
-    version: '0.5'
+    version: stable
     kconfig:
       - CONFIG_LIBMICROPYTHON=y
       - CONFIG_LIBMICROPYTHON_MAIN_FUNCTION=y
